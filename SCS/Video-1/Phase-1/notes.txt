@@ -1,0 +1,27 @@
+// Temporal Dead Zone
+
+we can't access value before it declared ( else with 'var' )
+
+E.g: 
+1  console.log(a);				1  console.log(b);
+2 						2 
+3						3
+4  let a = 1;					4  var b = 2;
+
+Output : "Error" 			Output : "Undefined/(something called hoist)"
+
+
+// hosting impact per type
+
+  hosting -> ek variable ko jab .js mein banaate hai to wo
+  variable do hisso mein toot jaata hai and uska declare part
+  upar chala jata hai and uska initilization part neeche reh jata hai 
+
+E.g:
+1  console.log(a);				1  let a = "undefined"  ( Group of people think it only happens with 'var' not with 'let' and 'const' )
+2  let a = 1; 		(explanation--->)	2  console.log(a);
+3						3  a = 1;
+
+ var -> hoist -> undefined
+ let -> hoist -> X
+ const -> hoist -> X
